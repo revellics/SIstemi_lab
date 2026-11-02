@@ -105,7 +105,7 @@ void caricaArrayInt(int *array, int *dim, int min, int max)
     int *i = (int *)malloc(sizeof(int));
     *i = 0;
 
-    for (; i < *dim; (*i)++)
+    for (; *i < *dim; (*i)++)
         *(array + *i) = min + (rand() % (max - 1));
 
     free(i);
@@ -115,7 +115,7 @@ void stampaArrayInt(int *array, int *dim)
     int *i = (int *)malloc(sizeof(int));
     *i = 0;
 
-    for (; i < *dim; (*i)++)
+    for (; *i < *dim; (*i)++)
         printf("%d", *(array + *i));
 
     printf("\n");
@@ -127,7 +127,7 @@ void caricaMultipli(int *array, int *dim, int *x)
     int *cnt = (int *)malloc(sizeof(int));
     int *i = (int *)malloc(sizeof(int));
 
-    for (; i < *dim; (*i)++)
+    for (; *i < *dim; (*i)++)
     {
         if (*(array + *i) % *x == 0)
         {
@@ -177,7 +177,7 @@ void caricaArrayChar(char *array, int *dim, int min, int max)
     int *i = (int *)malloc(sizeof(int));
     *i = 0;
 
-    for (; i < *dim; (*i)++)
+    for (; *i < *dim; (*i)++)
         *(array + *i) = min + (rand() % (max - 1));
 
     free(i);
@@ -187,7 +187,7 @@ void stampaArrayChar(char *array, int *dim)
     int *i = (int *)malloc(sizeof(int));
     *i = 0;
 
-    for (; i < *dim; (*i)++)
+    for (; *i < *dim; (*i)++)
         printf("%c", *(array + *i));
 
     printf("\n");
@@ -198,7 +198,7 @@ int* contaVocali(char* str){
     int* cnt = (int*) calloc(1, sizeof(int));
     int* second = (int*) calloc(1, sizeof(int));
 
-    while(*str != '\0' || second < 2){
+    while(*str != '\0' || *second < 2){
         if(*second == 1){
             if(*str == '*')
                 (*second)++;
